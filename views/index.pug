@@ -1,5 +1,28 @@
 extends layout
 
 block content
-  h1= title
-  p Welcome to #{title}
+    .container
+        .panel.panel-primary
+            .panel-heading Use this form to send an email
+            .panel-body
+                form.form-horizontal(action='/', method='post')
+
+                    .form-group
+                        label.col-md-4.control-label(for='toEmail') Receiver Email
+                        .col-md-4
+                            input.form-control(id='toEmail', name='to', placeholder='Enter the recipient address', type='email')
+
+                    .form-group
+                        label.col-md-4.control-label(for='subject') Subject
+                        .col-md-4
+                            input.form-control(id='subject', name='subject', placeholder='Enter the subject here', type='text')
+
+                    .form-group
+                        label.col-md-4.control-label(for='message') Message
+                        .col-md-4
+                            textarea.form-control(id='message', name='message', placeholder='Enter your message here', type='text')
+
+                    .form-group
+                        label.col-md-4.control-label(for='send') Send
+                        .col-md-4
+                            button.btn.btn-primary(id='send', type='submit') Send
